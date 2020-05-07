@@ -45,7 +45,7 @@ app.delete("/api/notes/:id", function(req, res){
     fs.readFile(noteData,function(err,data){
         if (err) throw err;
         const notes = JSON.parse(data);
-        const noteDel = notes.filter(note => note.id !== cancelID);
+        const noteDel = notes.filter(function(note){return note.id !== cancelID});
         console.log(noteDel);
         const notesWrite = JSON.stringify(noteDel);
         fs.writeFile(noteData, notesWrite,function(err){
