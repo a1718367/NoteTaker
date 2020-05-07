@@ -38,7 +38,6 @@ app.post("/api/notes", function(req, res){
         })
     })
     
-    i++;
 });
 app.delete("/api/notes/:id", function(req, res){
     const cancelID = parseInt(req.params.id);
